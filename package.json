@@ -1,0 +1,25 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "source": "index.html",
+  "scripts": {
+    "start":"parcel",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glorimax/project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/glorimax/project/issues"
+  },
+  "homepage": "https://github.com/glorimax/project#readme",
+  "devDependencies": {
+    "parcel": "^2.8.1",
+    "sass": "^1.56.2"
+  }
+}

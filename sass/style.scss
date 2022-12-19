@@ -1,0 +1,1195 @@
+@import 'variables';
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Source Sans Pro'),
+        url('../fonts/SourceSansPro-Regular.woff2') format('woff2'),
+        url('../fonts/SourceSansPro-Regular.woff') format('woff'),
+        url('../fonts/SourceSansPro-Regular.ttf') format('ttf'),
+        url('../fonts/SourceSansPro-Regular.eot') format('eot');
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header{
+    width: $mwidth;
+    display: flex;
+    flex-direction: column;
+    .discountg{
+        width: $mwidth ;
+        background: #57D9A6;
+        @extend %flex-center, %micro-text;
+        color: #1C1C33;
+        @include breakpoint (lg){
+            font-size: 14px;
+        }
+        @include breakpoint (sm){
+            font-size: 9px;
+        }
+        @include breakpoint (xs){
+            font-size: 6px;
+        }
+    }
+    .main-header{
+        width: $mwidth;
+        height: 105px;
+        background: #1C1C33;
+        @extend %flex-around;
+        @include breakpoint (md){
+            height: 75px;
+        }
+        .logo-header{
+            width: 135px;
+            height: 40px;
+            background: url(../img/logonav.png) no-repeat center;
+        }
+        .logo-header:hover{
+            cursor: no-drop;
+        }
+        .menu{
+            width: 70%;
+            text-align: center;
+            @include breakpoint (lg){
+                display: flex;
+                justify-content: space-around;
+                align-items: center; 
+            }
+            @include breakpoint (md){
+                width: 45%;
+            }
+            @include breakpoint (sm){
+                width: 25%;
+            }
+            .block-menu{
+                display: none;
+                width: 40px;
+                @include breakpoint (lg){
+                    display: block;
+                }
+                
+            }
+            .block-menu div{
+                height: 5px;
+                background: #F6F6F8;
+                margin-bottom: 5px;
+            }
+            .menu-list{
+                @include breakpoint (lg){
+                    display: none;
+                }
+                .li-nav{
+                    display: inline;
+                    .a-nav{
+                        padding: 5px 30px;
+                        text-decoration: none;
+                        color: #F6F6F8;
+                        @extend %micro-text;
+                    }
+                }
+
+            }
+        }
+        .shoplog{
+            width: 50px;
+            height: 40px;
+            background: url(../img/shoplog.png) center;
+        }
+        .shoplog:hover{
+            cursor: no-drop;
+        }
+    }
+}
+.banner{
+    width: 100%;
+    height: 909px;
+    background: #23233B;
+    @extend %flex-row;
+    justify-content: space-evenly;
+    @include breakpoint (lg){
+        height: 500px;
+    }
+    @include breakpoint (sm){
+        height: 350px;
+    }
+    .lp{
+        width: 30%;
+        height: 90%;
+        @extend %flex-column;
+        justify-content: space-evenly;
+        @include breakpoint (sm){
+            width: 100%;
+            justify-content: space-evenly;
+            align-items: center;
+            text-align: center;
+        }        
+        .fal{
+            width: $mwidth;
+            @extend %flex-column;
+            @include breakpoint (sm){
+                justify-content: center;
+                align-items: center;
+            }
+            .fc{
+                width: $mwidth;
+                @extend %micro-text;
+                color: #F6F6F8;
+                @include breakpoint (lg){
+                    font-size: 12px;
+                    line-height: 24px;
+                }
+                @include breakpoint (sm){
+                    font-size: 8px;
+                }
+            }
+            .line{
+                @extend %line;
+                @include breakpoint (lg){
+                    width: 100px;
+                }
+                @include breakpoint (sm){
+                    width: 80px;
+                }                
+            }
+        }
+        .run{
+            width: $mwidth;
+            height: 130px;
+            @extend %logo-text;
+            @include breakpoint (lg){
+                font-size: 28px;
+                line-height: 35px;
+            }
+            @include breakpoint (sm){
+                font-size: 24px;
+                line-height: 29px;
+                height: 56px;
+            }
+        }
+        .deep{
+            width: 100%;
+            @extend %lorem-text;
+            @include breakpoint (lg){
+                font-size: 12px;
+                line-height: 19px;
+            }
+            @include breakpoint (sm){
+                font-size: 14px;
+                line-height: 16px;            
+            }
+        }
+        .kathryn{
+            width: 100%;
+            @extend %micro-text;
+            color:#B2B2BF;
+            @include breakpoint (lg){
+                font-size: 12px;
+                line-height: 15px;
+            }
+            @include breakpoint (sm){
+                font-size: 10px;
+                line-height: 12px;
+            }
+        }
+        .lm{
+            width: 160px;
+            @extend %btn, %micro-text;
+            @include breakpoint (lg){
+                width: 140px;
+                height: 45px;
+                font-size: 12px;
+                line-height: 12px;
+            }
+        }
+        .lm:hover{
+            cursor: no-drop;
+        }
+    }
+    .rp{
+        width: 60%;
+        height: 100%;
+        background: url(../img/banner-rp.svg) center no-repeat;
+        @include breakpoint (lg){
+            background-size: contain;
+        }
+        @include breakpoint (sm){
+            display: none;
+        }
+    }
+}
+.feature{
+    width: $mwidth;
+    height: 1122px;
+    background: #23233B;
+    @extend %flex-column;
+    justify-content: space-evenly;
+    align-items: center;
+    @include breakpoint (lg){
+        height: 800px;
+    }
+    @include breakpoint (sm){
+        height: 1500px;
+    }
+    .featured{
+        width: $mwidth;
+        @extend %h2-text, %flex-center;
+        @include breakpoint (lg){
+            font-size: 38px;
+            line-height: 26px;
+        }
+    }
+    .line{
+        @extend %line;
+        @include breakpoint (lg){
+            width: 100px;
+        }
+    }
+    .banerlorem{
+        width: 40%;
+        @extend %lorem-text;
+        text-align: center;
+        @include breakpoint (lg){
+            width: 60%;
+            font-size: 16px;
+            line-height: 28px;
+        }
+    }
+    .vac{
+        width: 216px;
+        @extend %btn,%micro-text;
+        @include breakpoint (lg){
+            width: 200px;
+            height: 50px;
+            font-size: 16px;
+        }
+    }
+    .vac:hover{
+        cursor: no-drop;
+    }
+    .block-deal{
+        width: $mwidth;
+        @extend %flex-row;
+        align-items: center;
+        justify-content: space-evenly;
+        @include breakpoint (sm){
+            height: 800px;
+            flex-direction: column;
+        }
+        .deal{
+            width: 23%;
+            height: 430px;
+            background: #ffffff;
+            @extend %flex-column;
+            align-items: center;
+            @include breakpoint (lg){
+                width: 22%;
+                height: 224px;
+            }
+            @include breakpoint (sm){
+                width: 60%;
+            }                
+            .deal-image1{
+                width: $mwidth;
+                height: 197px;
+                background: url(../img/1deal.png) no-repeat;
+                background-size:100% 100%;
+                background-position: top center;
+            }
+            .deal-image2{
+                width: $mwidth;
+                height: 197px;
+                background: url(../img/2deal.png) no-repeat ;
+                background-size:100% 100%;
+                background-position: top center;
+            }
+            .deal-image3{
+                width: $mwidth;
+                height: 197px;
+                background: url(../img/3deal.png) no-repeat ;
+                background-size:100% 100%;
+                background-position: top center;
+            }
+            .deal-text{
+                width: 90%;
+                height: 190px;
+                @extend %flex-column;
+                justify-content: space-evenly;
+                .deal-log{
+                    width: $mwidth;
+                    @extend %deal-name;
+                    color: #1C1C33;
+                    @include breakpoint (lg){
+                        font-weight: 700;
+                        font-size: 12px;
+                        line-height: 18px;
+                    }
+                    @include breakpoint (md){
+                        font-size: 10px;
+                        line-height: 14px;
+                    }
+                }
+                .deal-name{
+                    width: $mwidth;
+                    @extend %micro-text;
+                    color: #4E4E65;
+                    @include breakpoint (lg){
+                        font-size: 14px;
+                        line-height: 26px;
+                    }
+                    @include breakpoint (md){
+                        font-size: 10px;
+                        line-height: 24px;
+                    }
+                }
+                .sum{
+                    width: $mwidth;
+                    @extend %flex-row, %lorem-text;
+                    letter-spacing: 1px;
+                    display: flex;
+                    justify-content: space-between;
+                    @include breakpoint (lg){
+    
+                    }
+                    .own-price{
+                        color: #1C1C33;
+                        @include breakpoint (lg){
+                            font-size: 12px;
+                            line-height: 24px;
+                        }
+                        @include breakpoint (md){
+                            font-size: 10px;
+                            line-height: 14px;
+                        }
+                    }
+                    .own-price1{
+                        color: #1C1C33;
+                        @include breakpoint (lg){
+                            font-size: 12px;
+                            line-height: 24px;
+                        }
+                        @include breakpoint (md){
+                            font-size: 10px;
+                            line-height: 14px;
+                        }
+                    }
+                    .old-price{
+                        color: #B2B2BF;
+                        @include breakpoint (lg){
+                            font-size: 12px;
+                            line-height: 24px;
+                        }
+                        @include breakpoint (md){
+                            font-size: 10px;
+                            line-height: 14px;
+                        }
+                    }
+                }
+                .learnm{
+                    width: 70px;
+                    @extend %btn;
+                    color: #57D9A6;
+                    border: 0px;
+                    background: none;
+                    @include breakpoint (lg){
+                        height: 49px;
+                    }
+                    @include breakpoint (md){
+                        height: 35px;
+                    }
+                }
+                .learnm:hover{
+                    cursor: no-drop;
+                }
+            } 
+        }
+    }
+}
+.gpl{
+    width: $mwidth;
+    height: 664px;
+    @extend %flex-row;
+    @include breakpoint (lg){
+        height: 374px;
+    }
+    .left-gpl{
+        width: $hwidth;
+        background: url(../img/gpl.png);
+        background-size:100% 100%;
+        background-position: left center;
+        @include breakpoint (sm){
+            display: none;
+        }
+    }
+    .right-gpl{
+        width: $hwidth;
+        @extend %flex-column;
+        justify-content: center;
+        align-items: center;
+        background: #1C1C33;
+        @include breakpoint (sm){
+            width: $mwidth;
+        }
+        .rgpl-text{
+            width: 90%;
+            height: 70%;
+            @extend %flex-column;
+            justify-content: space-evenly;
+            @include breakpoint (sm){
+                align-items: center;
+                text-align: center;
+            }
+            .hgpl{            
+                @extend %h2-text;
+                @include breakpoint (lg){
+                    font-size: 29px;
+                    line-height: 44px;
+                }
+                @include breakpoint (md){
+                    font-size: 24px;
+                }                
+            }
+            .line{
+                @extend %line;
+                @include breakpoint (lg){
+                    width: 100px;
+                }
+            }
+            .gpl-lorem{
+                width: $mwidth;
+                @extend %lorem-text;
+                @include breakpoint (lg){
+                    font-size: 14px;
+                    line-height: 18px;
+                }
+                @include breakpoint (md){
+                    font-size: 12px;
+                    line-height: 16px;
+                }
+            }
+            .cus{
+                width: 160px;
+                @extend %btn;
+                text-transform: uppercase;
+                color: #1C1C33;
+                @include breakpoint (lg){
+                    width: 130px;
+                    height: 39px;
+                    font-size: 12px;
+                }
+            }
+            .cus:hover{
+                cursor: no-drop;
+            }
+        }        
+    }
+}
+.workshop{
+    width: $mwidth;
+    height: 965px;
+    background: #F5F5F5;
+    @extend %flex-column;
+    justify-content: space-evenly;
+    align-items: center;
+    @include breakpoint (lg){
+    
+    }
+    @include breakpoint (sm){
+        height: 1300px;
+    }
+    .ws{
+        width: $mwidth;
+        @extend %h2-text, %flex-center;
+        color: #1C1C33;
+        @include breakpoint (lg){
+            font-size: 34px;
+            line-height: 30px;
+        }
+        @include breakpoint (sm){
+            font-size: 26px;
+        }
+    }
+    .line{
+        @extend %line;
+        @include breakpoint (lg){
+            width: 100px;
+        }
+    }
+    .lorem-ws{
+        width: 40%;
+        @extend %lorem-text;
+        text-align: center;
+        color: #4E4E65;
+        @include breakpoint (lg){
+            width: 60%;
+            font-size: 16px;
+            line-height: 30px;
+        }
+        @include breakpoint (md){
+            width: 70%;
+            font-size: 12px;
+            line-height: 22px;
+        }
+    }
+    .btn-ws{
+        width: 247px;
+        @extend %btn;
+        text-transform: uppercase;
+        color: #1C1C33;
+        @include breakpoint (lg){
+            width: 200px;
+            height: 49px;
+            font-size: 12px;
+        }
+    }
+    .btn-ws:hover{
+        cursor: no-drop;
+    }
+    .offer-ws{
+        width: $mwidth;
+        @extend %flex-row;
+        justify-content: space-around;
+        @include breakpoint (sm){
+            height: 800px;
+            flex-direction: column;
+            align-items: center;
+        }
+        .offer{
+            width: $twidth;
+            height: 270px;
+            background: #ffffff;
+            @extend %flex-column;
+            align-items: center;
+            justify-content: space-around;
+            @include breakpoint (lg){
+                height: 240px;
+            }
+            @include breakpoint (sm){
+                width: 60%;
+            }
+            .offer-text{
+                width: 90%;
+                .offern{
+                        width: $mwidth;
+                        @extend %micro-text;
+                        font-weight: 900;
+                        @include breakpoint (lg){
+                            font-size: 16px;
+                            line-height: 26px;                        
+                        }
+                        @include breakpoint (md){
+                            font-size: 12px;
+                            line-height: 20px;
+                        }
+                    }
+                .lorem-offer{
+                    width: $mwidth;
+                    @extend %micro-text;
+                    color: #4E4E65;
+                    @include breakpoint (lg){
+                        font-size: 12px;
+                        line-height: 22px;
+                    }
+                    @include breakpoint (md){
+                        font-size: 10px;
+                        line-height: 16px;
+                    }
+                }
+                .lm-offer{
+                    width: 70px;
+                    @extend %btn;
+                    color: #57D9A6;
+                    border: 0px;
+                    background: none;
+                    @include breakpoint (lg){
+                        height: 49px;
+                    }
+                }
+                .lm-offer:hover{
+                    cursor: no-drop;
+                }
+            }
+        }
+    }
+}
+.comment{
+    width: $mwidth;
+    height: 506px;
+    background: #57D9A6; 
+    @extend %flex-column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    @include breakpoint (lg){
+        height: 406px;
+    }
+    
+    .stars{
+        width: $mwidth;
+        height: 30px;
+        background: url(../img/stars.svg) center no-repeat;
+    }
+    .com{
+        width: 75%;
+        font-family: 'Source Sans Pro';
+        font-style: italic;
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 42px;
+        color: #1C1C33;
+        @include breakpoint (lg){
+            width: 85%;
+            font-size: 20px;
+        }
+        @include breakpoint (sm){
+            width: 90%;
+            font-size: 12px;
+        }
+    }
+    .influencer{
+        width: $mwidth;
+        @extend %micro-text;
+        color: #4E4E65;
+        @include breakpoint (lg){
+            font-size: 16px;
+        }
+        @include breakpoint (sm){
+            font-size: 10px;
+        }
+    }
+    .dots{
+        width: $mwidth;
+        height: 20px;
+        background: url(../img/dots.svg) center no-repeat;
+    }
+}
+.passion{
+    width: $mwidth;
+    height: 822px;
+    background: #1C1C33;
+    @extend %flex-row;
+    justify-content: space-around;
+    @include breakpoint (lg){
+        height: 622px;
+    }
+    @include breakpoint (sm){
+        height: 522px;
+    }
+    .left-pick{
+        width: $hwidth;
+        background: url(../img/passionteaching.svg) center no-repeat;
+        @include breakpoint (lg){
+            background-size: contain;
+        }
+        @include breakpoint (sm){
+            display: none;
+        }
+    }
+    .right-part{
+        width: 40%;
+        @extend %flex-center;
+        @include breakpoint (sm){
+            width: 90%;
+        }
+        .passion-text{
+            width: $mwidth;
+            height: 60%;
+            @extend %flex-column;
+            justify-content: space-evenly;
+            @include breakpoint (sm){
+                align-items: center;
+                text-align: center;
+            }
+            .teach{
+                width: $mwidth;
+                @extend %h2-text;
+                color: #F6F6F8;
+                @include breakpoint (lg){
+                    font-size: 30px;
+                    line-height: 35px;
+                }
+            }
+            .line{
+                @extend %line;
+                @include breakpoint (lg){
+                    width: 100px;
+                }
+            }
+            .deep-dive{
+                width: $mwidth;
+                @extend %lorem-text;
+                color: #F6F6F8;
+                @include breakpoint (lg){
+                    font-size: 14px;
+                    line-height: 24px;
+                }
+            }
+            .abtskillz{
+                width: 175px;
+                @extend %btn;
+                @include breakpoint (lg){
+                    width: 155px;
+                    height: 49px;
+                }
+            }
+            .abtskillz:hover{
+                cursor: no-drop;
+            }
+        }
+    }
+}
+.recent{
+    width: $mwidth;
+    height: 980px;
+    background: #F5F5F5;
+    @extend %flex-column;
+    align-items: center;
+    justify-content: space-evenly;
+    @include breakpoint (lg){
+        height: 780px;   
+    }
+    @include breakpoint (sm){
+        height: 1200px;
+    }
+    .recentarticle{
+        width: $mwidth;
+        @extend %h2-text;
+        color: #1C1C33;
+        text-align: center;
+        @include breakpoint (lg){
+            font-size: 36px;
+            line-height: 25px;
+        }
+    }
+    .line{
+        @extend %line;
+        @include breakpoint (lg){
+            width: 100px;
+        }
+    }
+    .lorem-article{
+        width: 40%;
+        height: 100px;
+        text-align: center;
+        @extend %lorem-text;
+        color: #4E4E65;
+        @include breakpoint (lg){
+            width: 60%;
+            font-size: 16px;
+            line-height: 28px;
+        }
+        @include breakpoint (md){
+            width: 70%;
+            font-size: 12px;
+            line-height: 22px;
+        }
+    }
+    .viewarticle{
+        width: 218px;
+        @extend %btn;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #1C1C33;
+        @include breakpoint (lg){
+            width: 208px;
+            height: 49px;
+        }
+    }
+    .viewarticle:hover{
+        cursor: no-drop;
+    }
+    .threearticle{
+        width: $mwidth;
+        @extend %flex-row;
+        justify-content: space-around;
+        align-items: center;
+        @include breakpoint (sm){
+            height: 800px;
+            flex-direction: column;
+        }
+        .article{
+            width: 29%;
+            height: 350px;
+            @extend %flex-column;
+            align-items: center;
+            background: #FFFFFF;
+            @include breakpoint (lg){
+                height: 232px;
+            }
+            @include breakpoint (md){
+                height: 195px;
+            }
+            @include breakpoint (sm){
+                width: 60%;
+            }
+            .artpick1{
+                width: $mwidth;
+                height: 196px;
+                background: url(../img/article1.png) center no-repeat;
+                @include breakpoint (lg){
+                    background-size:100%;
+                    background-position: top center;
+                }
+                @include breakpoint (md){
+                    height: 100px;
+                }
+            }
+            .artpick2{
+                width: $mwidth;
+                height: 196px;
+                background: url(../img/article2.png) center no-repeat;
+                @include breakpoint (lg){
+                    background-size:100%;
+                    background-position: top center;
+                }
+                @include breakpoint (md){
+                    height: 100px;
+                }
+            }
+            .artpick3{
+                width: $mwidth;
+                height: 196px;
+                background: url(../img/article3.png) center no-repeat;
+                @include breakpoint (lg){
+                    background-size:100%;
+                    background-position: top center;
+                }
+                @include breakpoint (md){
+                    height: 100px;
+                }
+            }
+            .article-text{
+                width: 90%;
+                @extend %flex-column;
+                @include breakpoint (md){
+                    justify-content: space-around;
+                }
+                .date{
+                    width: $mwidth;
+                    @extend %micro-text;
+                    color: #4E4E65;
+                    @include breakpoint (lg){
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+                    @include breakpoint (md){
+                        font-size: 12px;
+                        line-height: 16px;
+                    }
+                }
+                .articlename{
+                    width: $mwidth;
+                    @extend %lorem-text;
+                    color: #1C1C33;
+                    @include breakpoint (lg){
+                        font-weight: 600;
+                        font-size: 16px;
+                        line-height: 26px;
+                    }
+                    @include breakpoint (md){
+                        font-size: 12px;
+                        line-height: 20px;
+                    }
+                }
+                .authorname{
+                    width: $mwidth;
+                    @extend %micro-text;
+                    color: #4E4E65;
+                    @include breakpoint (lg){
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+                    @include breakpoint (md){
+                        font-size: 10px;
+                        line-height: 24px;
+                    }
+                }    
+            }        
+        }
+    }
+}
+.savecontact{
+    width: $mwidth;
+    height: 350px;
+    background: linear-gradient(to bottom, #F5F5F5 50%, #1C1C33 50%);
+    @extend %flex-center;
+    @include breakpoint (sm){
+        height: 200px;
+    }
+    .emailblock{
+        width: 90%;
+        height: 100%;
+        background: #57D9A6;
+        border-radius: 4px;
+        @extend %flex-column;
+        justify-content: space-evenly;
+        .define{
+            width: $mwidth;
+            @extend %h2-text;
+            color: #1C1C33;
+            text-align: center;
+            @include breakpoint (lg){
+                font-size: 34px;
+                line-height: 46px;
+            }
+            @include breakpoint (sm){
+                font-size: 14px;
+            }
+        }
+        .email-submit{
+            width: $mwidth;
+            @extend %flex-row;
+            justify-content: center;
+            align-items: center;
+            .email{
+                width: $twidth;
+                height: 64px;
+                padding-left: 10px;
+                border-radius: 4px;
+                border: 1px solid #1C1C33;
+                background: none;
+                @extend %lorem-text;
+                @include breakpoint (lg){
+                    width: $hwidth;
+                    height: 54px;
+                }
+                @include breakpoint (sm){
+                    font-size: 14px;
+                }                
+            }
+            .submit{
+                width: 116px;
+                height: 64px;
+                margin-left: 10px;
+                background: #1C1C33;
+                border-radius: 4px;
+                color: #57D9A6;
+                @include breakpoint (lg){
+                    width: 106px;
+                    height: 54px;
+                }
+            }
+            .submit:hover{
+                cursor: no-drop;
+            }
+        }
+    }
+}
+.footer{
+    width: $mwidth;
+    height: 755px;
+    @include breakpoint (lg){
+        height: 655px;
+    }
+    @include breakpoint (md){        
+        height: 455px;
+    }
+    .footer-content{
+        width: $mwidth;
+        height: 699px;
+        background: #1C1C33;
+        @extend %flex-column;
+        justify-content: space-around;
+        align-items: center;
+        @include breakpoint (lg){
+            height: 610px;
+        }
+        @include breakpoint (md){
+            height: 410px;
+        }
+        .footer-logo{
+            width: 90%;
+            height: 45px;
+            background: url(../img/logonav.png) no-repeat;
+        }
+        .footer-colum{
+            width: 90%;
+            @extend %flex-row;
+            justify-content: space-between;
+            .left-colum{
+                width: 25%;
+                height: 250px;
+                @extend %flex-column;
+                justify-content: space-between;
+                .footer-left1{
+                    @extend %footer-text;
+                    text-transform: uppercase;
+                    @include breakpoint (md){
+                        font-size: 12px;
+                    }
+                }
+                .footer-left{
+                    @extend %footer-text;
+                    text-decoration: none;
+                    @include breakpoint (md){
+                        font-size: 12px;
+                    }
+                }
+            }
+            .center-colum{
+                width: 25%;
+                height: 173px;
+                @extend %flex-column;
+                justify-content: space-between;
+                .footer-center1{
+                    @extend %footer-text;
+                    text-transform: uppercase;
+                    @include breakpoint (md){
+                        font-size: 12px;
+                    }
+                }
+                .footer-center{
+                    @extend %footer-text;
+                    text-decoration: none;
+                    @include breakpoint (md){
+                        font-size: 12px;
+                    }
+                }
+            }
+            .right-colum{
+                width: 40%;
+                height: 90px;
+                @extend %flex-column;
+                justify-content: space-between;
+                @include breakpoint (sm){
+                    text-align: center;
+                    height: 250px;
+                }
+                .follow{
+                    @extend %footer-text;
+                    text-transform: uppercase;
+                    @include breakpoint (md){
+                        font-size: 12px;
+                    }
+                    
+                }
+                .footer-pick{
+                    width: 70%;
+                    @extend %flex-row;
+                    justify-content: space-between;
+                    @include breakpoint (lg){
+                        width: 100%;
+                    }
+                    @include breakpoint (sm){
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                    @include breakpoint (sm){
+                        height: 220px;
+                    }
+                    .footer-pick1{
+                        width: 48px;
+                        height: 48px;
+                        background: url(../img/tiktok.png);
+                        background-size:100% 100%;
+                        background-position: top center;
+                        @include breakpoint (md){
+                            width: 36px;
+                            height: 36px;                            
+                        }
+                    }
+                    .footer-pick1:hover{
+                        cursor: no-drop;
+                    }
+                    .footer-pick2{
+                        width: 48px;
+                        height: 48px;
+                        background: url(../img/inst.png);
+                        background-size:100% 100%;
+                        background-position: top center;
+                        @include breakpoint (md){
+                            width: 36px;
+                            height: 36px;                            
+                        }
+                    }
+                    .footer-pick2:hover{
+                        cursor: no-drop;
+                    }
+                    .footer-pick3{
+                        width: 48px;
+                        height: 48px;
+                        background: url(../img/youtube.png);
+                        background-size:100% 100%;
+                        background-position: top center;
+                        @include breakpoint (md){
+                            width: 36px;
+                            height: 36px;                            
+                        }
+                    }
+                    .footer-pick3:hover{
+                        cursor: no-drop;
+                    }
+                    .footer-pick4{
+                        width: 48px;
+                        height: 48px;
+                        background: url(../img/facebook.png);
+                        background-size:100% 100%;
+                        background-position: top center;
+                        @include breakpoint (md){
+                            width: 36px;
+                            height: 36px;                            
+                        }
+                    }
+                    .footer-pick4:hover{
+                        cursor: no-drop;
+                    }
+                    .footer-pick5{
+                        width: 48px;
+                        height: 48px;
+                        background: url(../img/twitter.png);
+                        background-size:100% 100%;
+                        background-position: top center;
+                        @include breakpoint (md){
+                            width: 36px;
+                            height: 36px;                            
+                        }
+                    }
+                    .footer-pick5:hover{
+                        cursor: no-drop;
+                    }
+                }
+            }
+        }
+    }
+    .footer-copyright{
+        width: $mwidth;
+        height: 56px;
+        @extend %flex-row;
+        background: #23233B;
+        @include breakpoint (md){
+            height: 45px;
+        }
+        
+        .copy{
+            width: 20%;
+            @extend %micro-text, %flex-center;
+            color: #B2B2BF;
+            text-align: center;
+            @include breakpoint (lg){
+                width: 30%;
+            }
+            @include breakpoint (md){
+                width: 35%;
+            }
+            @include breakpoint (sm){
+                font-size: 10px;
+            }
+        }
+        .powered{
+            width: 20%;
+            @extend %micro-text, %flex-center;
+            color: #B2B2BF;
+            text-align: center;
+            @include breakpoint (lg){
+                width: 30%;
+            }
+            @include breakpoint (md){
+                width: 35%;
+            }
+            @include breakpoint (sm){
+                font-size: 10px;
+            }
+        }
+    }
+}

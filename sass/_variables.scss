@@ -1,0 +1,94 @@
+$mwidth: 100%;
+$hwidth: 50%;
+$twidth: 30%;
+%micro-text{
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 1px;
+}
+%footer-text{
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 1px;
+    color: #F6F6F8;
+}
+%logo-text{
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 55px;
+    line-height: 60px;
+    color: #F6F6F8;
+}
+%lorem-text{
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 33px;
+    color: #F6F6F8;
+}
+%h2-text{
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 53px;
+    color: #F6F6F8;
+}
+%deal-name{
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 29px;
+}
+%flex-center{
+    display:flex;
+    justify-content:center ;
+    align-items: center;
+}
+%flex-around{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+%flex-row{
+    display: flex;
+    flex-direction: row;
+}
+%flex-column{
+    display: flex;
+    flex-direction: column;
+}
+%line{
+    width: 150px;
+    border-bottom: 1px solid #57D9A6;
+}
+%btn{
+    height: 59px;
+    background: #57D9A6;
+    color: #1C1C33;
+    border: 0px;
+    border-radius: 4px;
+}
+@mixin breakpoint ($point){
+    @if $point == lg { 
+        @media (max-width: 992px) {@content;}        
+    }
+    @else if $point == md { 
+        @media (max-width: 768px) {@content;}        
+    }
+    @else if $point == sm { 
+        @media (max-width: 576px) {@content;}        
+    }
+    @else if $point == xs { 
+        @media (max-width: 320px) {@content;}        
+    }
+}
